@@ -1,10 +1,23 @@
 # Strongpoint Advisory
 
-**Target: https://advisors.strongpointops.com**
+**Target: https://advisors.strongpointops.com** — *no DNS record yet; the
+custom domain is not attached, so siblings route Advisory references to the
+firm page instead of reinstating a dead link.*
 
-Owner-side advisory ahead of the build — the sister company to Strongpoint
-Build. Feasibility, capital planning, survey and entitlement, design
-coordination, due diligence, and strategy-and-execution white papers.
+**Independent project consulting — not construction-specific.** Feasibility,
+estimates and risk work for anyone weighing a project: a homeowner costing a
+remodel, landscape or custom build; a manufacturer sizing regulatory, capital
+and efficiency exposure; a buyer pricing a property on what it will actually
+take.
+
+The hook is the independence, and it is the whole positioning: **an estimate
+from someone who is not bidding on the work.** The fee is the same whether the
+client builds with Strongpoint Build, builds with somebody else, or decides not
+to build. "Your project does not pencil" is a legitimate deliverable.
+
+Three honest endings are stated on the page — shop the scope to three
+contractors, sit on it, or hand it to Build to manage. Do not add a clause that
+steers people back to Build; the absence of one is the product.
 
 Plain HTML/CSS/JS. **No build step, no framework, no npm dependencies.** Every
 page is self-contained.
@@ -50,7 +63,7 @@ The accent clears all three gates from the Brand Playbook, measured:
 
 ## Placeholders
 
-`[surname]`, `[EMAIL]`, `[PHONE]`. The contact form has no backend — it
+`[surname]`, `info@strongpointops.com`, `[PHONE]`. The contact form has no backend — it
 composes a mailto. Market Notes has no list backend; the form carries the four
 qualifying answers into a mailto rather than dropping them.
 

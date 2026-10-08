@@ -7,7 +7,7 @@
 <meta name="description" content="Tell us the decision you are weighing. Thirty minutes, no charge.">
 <!--
   PLACEHOLDERS — fill before this is used commercially:
-  [surname] [EMAIL] [PHONE]
+  [surname]  [PHONE — TBD]
   Confirm any certification before claiming it. The copy claims only
   veteran-owned, which is the safe version.
 -->
@@ -198,11 +198,13 @@ footer{border-top:1px solid var(--line);padding:34px 0 50px;font-size:13px;color
       <span class="wm">Advisory<small>A Strongpoint Company</small></span>
     </a>
     <nav id="nav">
+      <a href="index.html#who">Who it's for</a>
       <a href="index.html#practice">Practice</a>
       <a href="index.html#report">The report</a>
+      <a href="index.html#yours">Yours</a>
       <a href="index.html#engage">Engagement</a>
       <a href="index.html#notes">Market Notes</a>
-      <a href="https://strongpointops.com" class="xlink">The Firm &#8599;</a>
+      <a href="https://main.strongpointops.com" class="xlink">The Firm &#8599;</a>
       <a class="btn sm" href="contact.html">Start a conversation</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">MENU</button>
@@ -231,9 +233,10 @@ footer{border-top:1px solid var(--line);padding:34px 0 50px;font-size:13px;color
       <div class="f"><label for="f-need">What you need</label>
         <select id="f-need" name="need">
           <option>Feasibility — does it pencil</option>
-          <option>Capital planning</option>
-          <option>Survey, entitlement or land use</option>
-          <option>Design coordination</option>
+          <option>Estimate / bid package I can shop around</option>
+          <option>Property or real estate assessment</option>
+          <option>Zoning, permitting or land use</option>
+          <option>Regulatory, capital or efficiency risk (business)</option>
           <option>Due diligence on an asset, operation or person</option>
           <option>Strategy and execution — a white paper</option>
           <option>Not sure yet</option>
@@ -261,12 +264,12 @@ footer{border-top:1px solid var(--line);padding:34px 0 50px;font-size:13px;color
     <div>
       <div class="sent" id="sent">
         <b>Ready to send.</b> Your mail client should have opened with this filled in. If it
-        did not, email <span class="tk">[EMAIL]</span> and paste the same details &mdash;
+        did not, email <a href="mailto:info@strongpointops.com">info@strongpointops.com</a> and paste the same details &mdash;
         <span class="tk">[this form is not wired to a backend yet]</span>.
       </div>
       <div class="card">
         <h3>Direct</h3>
-        <p><span class="tk">[EMAIL]</span><br><span class="tk">[PHONE — optional]</span></p>
+        <p><a href="mailto:info@strongpointops.com">info@strongpointops.com</a></p>
         <p style="color:var(--fg-faint)">Response within one business day.</p>
       </div>
       <div class="card" style="margin-top:18px">
@@ -284,11 +287,12 @@ footer{border-top:1px solid var(--line);padding:34px 0 50px;font-size:13px;color
 <footer>
   <div class="wrap foot">
     <a href="index.html">Practice</a>
-    <a href="index.html#engage">Engagement</a>
+    <a href="index.html#yours">Yours</a>
+      <a href="index.html#engage">Engagement</a>
     <a href="contact.html">Contact</a>
     <span class="sp">
       Strongpoint Advisory, a company of
-      <a href="https://strongpointops.com">The Strongpoint Firm</a>. Independent of
+      <a href="https://main.strongpointops.com">The Strongpoint Firm</a>. Independent of
       <a href="https://build.strongpointops.com/">Strongpoint Build</a> on any scope where
       both would be engaged. &copy; 2026.
     </span>
@@ -302,8 +306,8 @@ document.getElementById('intake').addEventListener('submit',function(e){
   var body=['Name: '+g('name'),'Email: '+g('email'),'Company: '+g('org'),'Location: '+g('where'),
     'Need: '+g('need'),'Stage: '+g('stage'),'Scale: '+g('scale'),'',g('msg')].join('\n');
   document.getElementById('sent').style.display='block';
-  /* [EMAIL] — replace before launch. */
-  window.location.href='mailto:?subject='+encodeURIComponent('Advisory enquiry — '+g('name'))+
+  /* Goes to info@strongpointops.com. */
+  window.location.href='mailto:info@strongpointops.com?subject='+encodeURIComponent('Advisory enquiry — '+g('name'))+
     '&body='+encodeURIComponent(body);
 });
 var mb=document.getElementById('menuBtn'), nv=document.getElementById('nav');

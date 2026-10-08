@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Strongpoint Advisory</title>
+<meta name="description" content="Tell us the decision you are weighing. Thirty minutes, no charge.">
+<!--
+  PLACEHOLDERS — fill before this is used commercially:
+  [surname] [EMAIL] [PHONE]
+  Confirm any certification before claiming it. The copy claims only
+  veteran-owned, which is the safe version.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Strongpoint Advisory — see the Brand Playbook. Fifth property in the group:
+   its own ground and accent, the shared skeleton. Accent #7fa968 clears all
+   three colour gates — 6.92:1 on this ground, 65 degrees minimum hue
+   separation from parent, principal, build and dashboard. */
+:root{
+  --ink:#0e1316; --panel:#161c20; --panel-2:#1d2529;
+  --line:#28312f; --line-bright:#3a4542;
+  --fg:#e7e9ea; --fg-dim:#9aa3a5; --fg-faint:#6c7578;
+  --accent:#7fa968; --accent-lo:#4b6640; --accent-hi:#9bc084;
+  --family:#6f8fa8;
+  --ok:#7f9b6a;
+  --display:"Archivo Narrow","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:86px}
+section[id]{scroll-margin-top:86px}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--body);
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.06;margin:0}
+a{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 16px}
+.eyebrow.dim{color:var(--fg-faint)}
+
+header{position:sticky;top:0;z-index:40;background:rgba(14,19,22,.9);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.hdr{display:flex;align-items:center;gap:24px;height:66px}
+.mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;margin-right:auto}
+.mark .glyph{width:30px;height:30px;border:1px solid var(--accent);display:grid;place-items:center;
+  font-family:var(--display);font-size:15px;color:var(--accent);position:relative;flex:none}
+.mark .glyph::after{content:"";position:absolute;inset:3px;border:1px solid var(--accent-lo)}
+.mark .wm{font-family:var(--display);font-size:19px;letter-spacing:.06em;text-transform:uppercase}
+.mark .wm small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.15em;
+  color:var(--fg-faint);text-transform:none;margin-top:1px}
+nav{display:flex;align-items:center;gap:24px}
+nav a{font-size:13.5px;color:var(--fg-dim);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--fg);border-bottom-color:var(--accent)}
+nav a.xlink{color:var(--family)}
+nav a.xlink:hover{color:#8fb0c9;border-bottom-color:var(--family)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-size:15px;
+  letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;
+  border:1px solid var(--accent);color:var(--ink);background:var(--accent);cursor:pointer;
+  transition:background .15s,border-color .15s}
+.btn:hover{background:var(--accent-hi);border-color:var(--accent-hi)}
+.btn.ghost{background:none;color:var(--accent)}
+.btn.ghost:hover{background:rgba(127,169,104,.12)}
+.btn.sm{font-size:13.5px;padding:8px 14px}
+.menu-btn{display:none;background:none;border:1px solid var(--line-bright);color:var(--fg);
+  padding:7px 11px;font-family:var(--mono);font-size:12px;cursor:pointer}
+
+.plate{position:relative;border:1px solid var(--line)}
+.corner{position:absolute;width:12px;height:12px;color:var(--line-bright)}
+.corner::before,.corner::after{content:"";position:absolute;background:currentColor}
+.corner::before{width:12px;height:1px}.corner::after{width:1px;height:12px}
+.corner.tl{top:-1px;left:-1px}
+.corner.br{bottom:-1px;right:-1px}.corner.br::before{bottom:0;right:0}.corner.br::after{bottom:0;right:0}
+
+.hero{padding:92px 0 78px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(760px 420px at 18% 40%, rgba(127,169,104,.09), transparent 70%)}
+.hero-copy{position:relative;max-width:860px}
+h1{font-size:clamp(38px,5.6vw,66px);max-width:17ch;letter-spacing:-.004em}
+h1 .b{color:var(--accent)}
+.lede{font-size:clamp(16.5px,1.5vw,19.5px);color:var(--fg-dim);margin:24px 0 0;max-width:62ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 0}
+
+.band{border-top:1px solid var(--line);padding:80px 0}
+.band.tint{background:#11171a}
+.sec-head{max-width:740px;margin:0 0 42px}
+.sec-head h2{font-size:clamp(27px,3.5vw,40px)}
+.sec-head p{color:var(--fg-dim);margin:18px 0 0}
+h3{font-size:22px;margin:0 0 10px}
+p{margin:0 0 14px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--ink);padding:28px 26px 30px;display:flex;flex-direction:column}
+.svc .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--accent);display:block;margin-bottom:14px}
+.svc h3{font-size:23px}
+.svc p{font-size:15px;color:var(--fg-dim);margin:0 0 15px}
+.svc ul{margin:0 0 18px;padding:0 0 0 18px}
+.svc li{font-size:14px;color:var(--fg-faint);margin:0 0 7px}
+.svc .out{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--fg-faint);
+  border-top:1px solid var(--line);padding-top:13px;margin:auto 0 0}
+.svc .out b{color:var(--accent);font-weight:400}
+
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start}
+.two p{color:var(--fg-dim)}
+.plist{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.plist li{border-bottom:1px solid var(--line);padding:16px 0;display:flex;gap:18px;align-items:baseline}
+.plist .num{font-family:var(--mono);font-size:11px;color:var(--accent);flex:none;width:26px}
+.plist .tx{font-size:15px;color:var(--fg-dim)}
+.plist .tx b{color:var(--fg);font-weight:600}
+
+.bill{margin:28px 0 0;border-top:1px solid var(--line)}
+.bill div{border-bottom:1px solid var(--line);padding:16px 0;display:grid;
+  grid-template-columns:230px 1fr;gap:24px;align-items:baseline}
+.bill b{font-family:var(--display);font-size:19px}
+.bill span{font-size:14.5px;color:var(--fg-dim)}
+.bill a{color:var(--accent)}
+
+.orgs{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.orgs li{border-bottom:1px solid var(--line);padding:16px 0}
+.orgs b{display:block;font-family:var(--display);font-size:20px}
+.orgs em{display:block;font-style:normal;font-size:14.5px;color:var(--fg-dim);margin:5px 0 7px}
+.orgs a{font-family:var(--mono);font-size:11.5px;color:var(--family);text-decoration:none;
+  border-bottom:1px solid color-mix(in srgb,#6f8fa8 45%,transparent)}
+.orgs a:hover{color:var(--family)}
+
+.news{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.news .qual{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.nf{margin:0 0 16px}
+.nf label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--fg-faint);margin:0 0 7px}
+.nf input,.nf select{width:100%;background:#121a1d;border:1px solid var(--line-bright);
+  color:var(--fg);font:inherit;font-family:var(--body);font-size:15px;padding:11px 13px}
+.nf input:focus,.nf select:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+.said{display:none;border:1px solid var(--ok);padding:20px;margin:18px 0 0}
+.said b{font-family:var(--display);font-size:20px;display:block;margin-bottom:6px}
+.issues{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.issues li{border-bottom:1px solid var(--line);padding:15px 0}
+.issues b{display:block;font-size:15.5px;font-weight:600}
+.issues em{display:block;font-style:normal;font-size:13.5px;color:var(--fg-faint);margin-top:3px}
+.tk{color:var(--accent);border-bottom:1px dashed var(--accent-lo);font-family:var(--mono);font-size:.88em}
+
+.cta{border-top:1px solid var(--line);padding:88px 0;text-align:center;
+  background:radial-gradient(640px 320px at 50% 0%, rgba(127,169,104,.10), transparent 70%)}
+.cta h2{font-size:clamp(29px,4.2vw,46px);max-width:21ch;margin:0 auto}
+.cta p{color:var(--fg-dim);max-width:56ch;margin:20px auto 0}
+.cta .row{display:flex;gap:12px;justify-content:center;margin:30px 0 0;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:34px 0 50px;font-size:13px;color:var(--fg-faint)}
+.foot{display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+.foot a{text-decoration:none;color:var(--fg-faint)}
+.foot a:hover{color:var(--fg)}
+.foot .sp{margin-left:auto;max-width:470px;text-align:right;line-height:1.55;font-size:12.5px}
+.foot .sp a{color:var(--family)}
+
+@media (max-width:980px){
+  .grid3{grid-template-columns:1fr}
+  .two,.news{grid-template-columns:1fr;gap:36px}
+  .news .qual{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  nav{display:none}
+  nav.open{display:flex;position:absolute;top:66px;left:0;right:0;flex-direction:column;
+    align-items:flex-start;gap:0;background:var(--panel);border-bottom:1px solid var(--line);padding:6px 24px 14px}
+  nav.open a{padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .hero{padding:60px 0 52px}
+  .band,.cta{padding:56px 0}
+  .bill div{grid-template-columns:1fr;gap:6px}
+  .foot .sp{text-align:left;margin-left:0}
+}
+</style>
+<style>
+.f{margin:0 0 18px}
+.f label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--fg-faint);margin:0 0 7px}
+.f input,.f select,.f textarea{width:100%;background:#121a1d;border:1px solid var(--line-bright);
+  color:var(--fg);font:inherit;font-family:var(--body);font-size:15px;padding:11px 13px}
+.f textarea{min-height:140px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+.card{border:1px solid var(--line);background:var(--panel);padding:24px}
+.card h3{font-size:20px;margin:0 0 12px}
+.card p{font-size:15px;color:var(--fg-dim);margin:0 0 12px}
+.card ul{margin:0;padding:0 0 0 18px}
+.card li{font-size:14.5px;color:var(--fg-dim);margin:0 0 9px}
+.sent{display:none;border:1px solid var(--accent);padding:22px;margin:0 0 18px}
+.sent b{font-family:var(--display);font-size:21px;display:block;margin-bottom:8px}
+@media (max-width:980px){ form .g2{grid-template-columns:1fr!important} }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a class="mark" href="index.html">
+      <span class="glyph">A</span>
+      <span class="wm">Advisory<small>A Strongpoint Company</small></span>
+    </a>
+    <nav id="nav">
+      <a href="index.html#practice">Practice</a>
+      <a href="index.html#report">The report</a>
+      <a href="index.html#engage">Engagement</a>
+      <a href="index.html#notes">Market Notes</a>
+      <a href="https://strongpointops.com" class="xlink">The Firm &#8599;</a>
+      <a class="btn sm" href="contact.html">Start a conversation</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">MENU</button>
+  </div>
+</header>
+<section class="hero" style="padding-bottom:34px">
+  <div class="wrap"><div class="hero-copy">
+    <p class="eyebrow">Contact</p>
+    <h1 style="font-size:clamp(34px,5vw,54px)">Tell us the decision you are weighing.</h1>
+    <p class="lede">First conversation runs about thirty minutes and costs nothing. If the
+       honest answer is that you do not need us yet, that is what you will hear.</p>
+  </div></div>
+</section>
+
+<section class="band" style="border-top:0;padding-top:20px">
+  <div class="wrap two">
+    <form id="intake">
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:0 18px">
+        <div class="f"><label for="f-name">Name</label><input id="f-name" name="name" type="text" required></div>
+        <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+      </div>
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:0 18px">
+        <div class="f"><label for="f-org">Company</label><input id="f-org" name="org" type="text"></div>
+        <div class="f"><label for="f-where">Where</label><input id="f-where" name="where" type="text" placeholder="County and state"></div>
+      </div>
+      <div class="f"><label for="f-need">What you need</label>
+        <select id="f-need" name="need">
+          <option>Feasibility — does it pencil</option>
+          <option>Capital planning</option>
+          <option>Survey, entitlement or land use</option>
+          <option>Design coordination</option>
+          <option>Due diligence on an asset, operation or person</option>
+          <option>Strategy and execution — a white paper</option>
+          <option>Not sure yet</option>
+        </select></div>
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:0 18px">
+        <div class="f"><label for="f-stage">Where you are</label>
+          <select id="f-stage" name="stage">
+            <option>Thinking about it</option><option>Evaluating, pre-commitment</option>
+            <option>Under contract or committed</option><option>Under way and drifting</option>
+            <option>In trouble</option>
+          </select></div>
+        <div class="f"><label for="f-scale">Scale of the decision</label>
+          <select id="f-scale" name="scale">
+            <option>Under $250k</option><option>$250k &ndash; $1M</option>
+            <option>$1M &ndash; $2.5M</option><option>$2.5M &ndash; $10M</option>
+            <option>Over $10M</option><option>Rather discuss it</option>
+          </select></div>
+      </div>
+      <div class="f"><label for="f-msg">The decision, in your words</label>
+        <textarea id="f-msg" name="msg" placeholder="The more specific, the more useful the first call is."></textarea></div>
+      <button class="btn" type="submit">Send</button>
+      <p style="font-size:13px;color:var(--fg-faint);margin-top:14px">
+        Held in confidence. Not shared, not sold, not used as a reference without written consent.</p>
+    </form>
+    <div>
+      <div class="sent" id="sent">
+        <b>Ready to send.</b> Your mail client should have opened with this filled in. If it
+        did not, email <span class="tk">[EMAIL]</span> and paste the same details &mdash;
+        <span class="tk">[this form is not wired to a backend yet]</span>.
+      </div>
+      <div class="card">
+        <h3>Direct</h3>
+        <p><span class="tk">[EMAIL]</span><br><span class="tk">[PHONE — optional]</span></p>
+        <p style="color:var(--fg-faint)">Response within one business day.</p>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <h3>What happens next</h3>
+        <ul>
+          <li>Thirty-minute call on the decision and what is actually at risk.</li>
+          <li>A written scope: what we would do, in what order, and the fee.</li>
+          <li>Retainer or fixed fee per deliverable, agreed before any work starts.</li>
+          <li>Any overlap with Strongpoint Build disclosed in writing before you engage.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot">
+    <a href="index.html">Practice</a>
+    <a href="index.html#engage">Engagement</a>
+    <a href="contact.html">Contact</a>
+    <span class="sp">
+      Strongpoint Advisory, a company of
+      <a href="https://strongpointops.com">The Strongpoint Firm</a>. Independent of
+      <a href="https://build.strongpointops.com/">Strongpoint Build</a> on any scope where
+      both would be engaged. &copy; 2026.
+    </span>
+  </div>
+</footer>
+<script>
+/* No backend yet — compose a mail instead of pretending the form posted. */
+document.getElementById('intake').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=this, g=function(n){return (f.elements[n]&&f.elements[n].value||'').trim();};
+  var body=['Name: '+g('name'),'Email: '+g('email'),'Company: '+g('org'),'Location: '+g('where'),
+    'Need: '+g('need'),'Stage: '+g('stage'),'Scale: '+g('scale'),'',g('msg')].join('\n');
+  document.getElementById('sent').style.display='block';
+  /* [EMAIL] — replace before launch. */
+  window.location.href='mailto:?subject='+encodeURIComponent('Advisory enquiry — '+g('name'))+
+    '&body='+encodeURIComponent(body);
+});
+var mb=document.getElementById('menuBtn'), nv=document.getElementById('nav');
+mb.addEventListener('click',function(){
+  var open=nv.classList.toggle('open');
+  mb.setAttribute('aria-expanded',String(open));
+});
+</script>

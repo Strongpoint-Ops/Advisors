@@ -1,0 +1,17 @@
+{
+  // Strongpoint Advisory — advisors.strongpointops.com. Static assets only.
+  //
+  // ⚠ "name" MUST match the Worker name in the Cloudflare dashboard or the
+  // build fails. This assumes the Worker took the repo name. If it is called
+  // something else, change this line — that is the whole fix.
+  //
+  // Deploy command is a DASHBOARD setting: `npx wrangler deploy`, never a bare
+  // `wrangler deploy` (wrangler is not on PATH for /bin/sh).
+  "name": "advisors",
+  "compatibility_date": "2026-10-08",
+  "assets": {
+    "directory": "./site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

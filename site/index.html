@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strongpoint Advisory — Feasibility, Capital Planning &amp; Due Diligence</title>
+<meta name="description" content="Owner-side advisory ahead of the build: feasibility, capital planning, entitlement, design coordination and due diligence, delivered as a written position you can act on.">
+<!--
+  PLACEHOLDERS — fill before this is used commercially:
+  [surname] [EMAIL] [PHONE]
+  Confirm any certification before claiming it. The copy claims only
+  veteran-owned, which is the safe version.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Strongpoint Advisory — see the Brand Playbook. Fifth property in the group:
+   its own ground and accent, the shared skeleton. Accent #7fa968 clears all
+   three colour gates — 6.92:1 on this ground, 65 degrees minimum hue
+   separation from parent, principal, build and dashboard. */
+:root{
+  --ink:#0e1316; --panel:#161c20; --panel-2:#1d2529;
+  --line:#28312f; --line-bright:#3a4542;
+  --fg:#e7e9ea; --fg-dim:#9aa3a5; --fg-faint:#6c7578;
+  --accent:#7fa968; --accent-lo:#4b6640; --accent-hi:#9bc084;
+  --family:#6f8fa8;
+  --ok:#7f9b6a;
+  --display:"Archivo Narrow","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:86px}
+section[id]{scroll-margin-top:86px}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--body);
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.06;margin:0}
+a{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 16px}
+.eyebrow.dim{color:var(--fg-faint)}
+
+header{position:sticky;top:0;z-index:40;background:rgba(14,19,22,.9);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.hdr{display:flex;align-items:center;gap:24px;height:66px}
+.mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;margin-right:auto}
+.mark .glyph{width:30px;height:30px;border:1px solid var(--accent);display:grid;place-items:center;
+  font-family:var(--display);font-size:15px;color:var(--accent);position:relative;flex:none}
+.mark .glyph::after{content:"";position:absolute;inset:3px;border:1px solid var(--accent-lo)}
+.mark .wm{font-family:var(--display);font-size:19px;letter-spacing:.06em;text-transform:uppercase}
+.mark .wm small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.15em;
+  color:var(--fg-faint);text-transform:none;margin-top:1px}
+nav{display:flex;align-items:center;gap:24px}
+nav a{font-size:13.5px;color:var(--fg-dim);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--fg);border-bottom-color:var(--accent)}
+nav a.xlink{color:var(--family)}
+nav a.xlink:hover{color:#8fb0c9;border-bottom-color:var(--family)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-size:15px;
+  letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;
+  border:1px solid var(--accent);color:var(--ink);background:var(--accent);cursor:pointer;
+  transition:background .15s,border-color .15s}
+.btn:hover{background:var(--accent-hi);border-color:var(--accent-hi)}
+.btn.ghost{background:none;color:var(--accent)}
+.btn.ghost:hover{background:rgba(127,169,104,.12)}
+.btn.sm{font-size:13.5px;padding:8px 14px}
+.menu-btn{display:none;background:none;border:1px solid var(--line-bright);color:var(--fg);
+  padding:7px 11px;font-family:var(--mono);font-size:12px;cursor:pointer}
+
+.plate{position:relative;border:1px solid var(--line)}
+.corner{position:absolute;width:12px;height:12px;color:var(--line-bright)}
+.corner::before,.corner::after{content:"";position:absolute;background:currentColor}
+.corner::before{width:12px;height:1px}.corner::after{width:1px;height:12px}
+.corner.tl{top:-1px;left:-1px}
+.corner.br{bottom:-1px;right:-1px}.corner.br::before{bottom:0;right:0}.corner.br::after{bottom:0;right:0}
+
+.hero{padding:92px 0 78px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(760px 420px at 18% 40%, rgba(127,169,104,.09), transparent 70%)}
+.hero-copy{position:relative;max-width:860px}
+h1{font-size:clamp(38px,5.6vw,66px);max-width:17ch;letter-spacing:-.004em}
+h1 .b{color:var(--accent)}
+.lede{font-size:clamp(16.5px,1.5vw,19.5px);color:var(--fg-dim);margin:24px 0 0;max-width:62ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 0}
+
+.band{border-top:1px solid var(--line);padding:80px 0}
+.band.tint{background:#11171a}
+.sec-head{max-width:740px;margin:0 0 42px}
+.sec-head h2{font-size:clamp(27px,3.5vw,40px)}
+.sec-head p{color:var(--fg-dim);margin:18px 0 0}
+h3{font-size:22px;margin:0 0 10px}
+p{margin:0 0 14px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--ink);padding:28px 26px 30px;display:flex;flex-direction:column}
+.svc .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--accent);display:block;margin-bottom:14px}
+.svc h3{font-size:23px}
+.svc p{font-size:15px;color:var(--fg-dim);margin:0 0 15px}
+.svc ul{margin:0 0 18px;padding:0 0 0 18px}
+.svc li{font-size:14px;color:var(--fg-faint);margin:0 0 7px}
+.svc .out{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--fg-faint);
+  border-top:1px solid var(--line);padding-top:13px;margin:auto 0 0}
+.svc .out b{color:var(--accent);font-weight:400}
+
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start}
+.two p{color:var(--fg-dim)}
+.plist{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.plist li{border-bottom:1px solid var(--line);padding:16px 0;display:flex;gap:18px;align-items:baseline}
+.plist .num{font-family:var(--mono);font-size:11px;color:var(--accent);flex:none;width:26px}
+.plist .tx{font-size:15px;color:var(--fg-dim)}
+.plist .tx b{color:var(--fg);font-weight:600}
+
+.bill{margin:28px 0 0;border-top:1px solid var(--line)}
+.bill div{border-bottom:1px solid var(--line);padding:16px 0;display:grid;
+  grid-template-columns:230px 1fr;gap:24px;align-items:baseline}
+.bill b{font-family:var(--display);font-size:19px}
+.bill span{font-size:14.5px;color:var(--fg-dim)}
+.bill a{color:var(--accent)}
+
+.orgs{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.orgs li{border-bottom:1px solid var(--line);padding:16px 0}
+.orgs b{display:block;font-family:var(--display);font-size:20px}
+.orgs em{display:block;font-style:normal;font-size:14.5px;color:var(--fg-dim);margin:5px 0 7px}
+.orgs a{font-family:var(--mono);font-size:11.5px;color:var(--family);text-decoration:none;
+  border-bottom:1px solid color-mix(in srgb,#6f8fa8 45%,transparent)}
+.orgs a:hover{color:var(--family)}
+
+.news{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.news .qual{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.nf{margin:0 0 16px}
+.nf label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--fg-faint);margin:0 0 7px}
+.nf input,.nf select{width:100%;background:#121a1d;border:1px solid var(--line-bright);
+  color:var(--fg);font:inherit;font-family:var(--body);font-size:15px;padding:11px 13px}
+.nf input:focus,.nf select:focus{outline:1px solid var(--accent);border-color:var(--accent)}
+.said{display:none;border:1px solid var(--ok);padding:20px;margin:18px 0 0}
+.said b{font-family:var(--display);font-size:20px;display:block;margin-bottom:6px}
+.issues{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.issues li{border-bottom:1px solid var(--line);padding:15px 0}
+.issues b{display:block;font-size:15.5px;font-weight:600}
+.issues em{display:block;font-style:normal;font-size:13.5px;color:var(--fg-faint);margin-top:3px}
+.tk{color:var(--accent);border-bottom:1px dashed var(--accent-lo);font-family:var(--mono);font-size:.88em}
+
+.cta{border-top:1px solid var(--line);padding:88px 0;text-align:center;
+  background:radial-gradient(640px 320px at 50% 0%, rgba(127,169,104,.10), transparent 70%)}
+.cta h2{font-size:clamp(29px,4.2vw,46px);max-width:21ch;margin:0 auto}
+.cta p{color:var(--fg-dim);max-width:56ch;margin:20px auto 0}
+.cta .row{display:flex;gap:12px;justify-content:center;margin:30px 0 0;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:34px 0 50px;font-size:13px;color:var(--fg-faint)}
+.foot{display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+.foot a{text-decoration:none;color:var(--fg-faint)}
+.foot a:hover{color:var(--fg)}
+.foot .sp{margin-left:auto;max-width:470px;text-align:right;line-height:1.55;font-size:12.5px}
+.foot .sp a{color:var(--family)}
+
+@media (max-width:980px){
+  .grid3{grid-template-columns:1fr}
+  .two,.news{grid-template-columns:1fr;gap:36px}
+  .news .qual{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  nav{display:none}
+  nav.open{display:flex;position:absolute;top:66px;left:0;right:0;flex-direction:column;
+    align-items:flex-start;gap:0;background:var(--panel);border-bottom:1px solid var(--line);padding:6px 24px 14px}
+  nav.open a{padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .hero{padding:60px 0 52px}
+  .band,.cta{padding:56px 0}
+  .bill div{grid-template-columns:1fr;gap:6px}
+  .foot .sp{text-align:left;margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hdr">
+    <a class="mark" href="index.html">
+      <span class="glyph">A</span>
+      <span class="wm">Advisory<small>A Strongpoint Company</small></span>
+    </a>
+    <nav id="nav">
+      <a href="#practice">Practice</a>
+      <a href="#report">The report</a>
+      <a href="#engage">Engagement</a>
+      <a href="#notes">Market Notes</a>
+      <a href="https://strongpointops.com" class="xlink">The Firm &#8599;</a>
+      <a class="btn sm" href="contact.html">Start a conversation</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">MENU</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Owner-side advisory &middot; Ahead of the build</p>
+      <h1>Find out what it costs<br><span class="b">before you are committed.</span></h1>
+      <p class="lede">
+        Strongpoint Advisory does the work that decides whether a project should happen and
+        on what terms. We assemble the specialists, run the analysis, and hand you one
+        written position you can take to a board, a lender or a seller &mdash; not a folder
+        of consultant reports you have to reconcile yourself.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="contact.html">Start a conversation</a>
+        <a class="btn ghost" href="#practice">What we cover</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band tint" id="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The practice</p>
+      <h2>Six questions a project has to survive.</h2>
+      <p>Most of these get answered badly, late, or by someone with an interest in the
+         answer. That is the whole reason this company is separate from the one that builds.</p>
+    </div>
+    <div class="grid3">
+
+      <div class="svc plate">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="n">01</span>
+        <h3>Feasibility</h3>
+        <p>Does it pencil, and what would have to be true for it to?</p>
+        <ul>
+          <li>Programme and site constraints</li>
+          <li>Cost model and schedule</li>
+          <li>Sensitivity on the three variables that actually move it</li>
+          <li>A go / no-go recommendation with the reasoning attached</li>
+        </ul>
+        <p class="out"><b>Deliverable:</b> feasibility report</p>
+      </div>
+
+      <div class="svc plate">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="n">02</span>
+        <h3>Capital planning</h3>
+        <p>What it costs across the whole life, not just to build.</p>
+        <ul>
+          <li>Phasing and spend profile</li>
+          <li>Capex schedule and renewal horizon</li>
+          <li>Funding structure and draw mechanics</li>
+          <li>What breaks the plan, priced</li>
+        </ul>
+        <p class="out"><b>Deliverable:</b> capital plan</p>
+      </div>
+
+      <div class="svc plate">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="n">03</span>
+        <h3>Survey &amp; entitlement</h3>
+        <p>Whether the ground will legally do what your plan assumes.</p>
+        <ul>
+          <li>Land-use and zoning analysis</li>
+          <li>Survey, easements and legal access</li>
+          <li>Water rights and resource constraints</li>
+          <li>Permit path with the critical path marked</li>
+        </ul>
+        <p class="out"><b>Deliverable:</b> entitlement strategy</p>
+      </div>
+
+      <div class="svc plate">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="n">04</span>
+        <h3>Design coordination</h3>
+        <p>Getting the drawings and the budget to agree before they are yours.</p>
+        <ul>
+          <li>Consultant selection and scoping</li>
+          <li>Cross-discipline coordination</li>
+          <li>Design-to-budget reconciliation</li>
+          <li>Constructability review before issue</li>
+        </ul>
+        <p class="out"><b>Deliverable:</b> coordinated design package</p>
+      </div>
+
+      <div class="svc plate">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="n">05</span>
+        <h3>Due diligence</h3>
+        <p>What the financials do not show about an asset, an operation or a person.</p>
+        <ul>
+          <li>Condition, capacity and deferred maintenance</li>
+          <li>Operational and key-person risk</li>
+          <li>Counterparty and track-record verification</li>
+          <li>The questions your letter of intent should have asked</li>
+        </ul>
+        <p class="out"><b>Deliverable:</b> diligence file</p>
+      </div>
+
+      <div class="svc plate">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <span class="n">06</span>
+        <h3>Strategy &amp; execution</h3>
+        <p>What to do, in what order, and who should do it.</p>
+        <ul>
+          <li>Options appraised against the same programme</li>
+          <li>Delivery route and procurement strategy</li>
+          <li>Risk register with owners and dates</li>
+          <li>An execution plan somebody can actually run</li>
+        </ul>
+        <p class="out"><b>Deliverable:</b> white-paper report</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band" id="report">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">The deliverable</p>
+      <h2 style="font-size:clamp(26px,3.3vw,37px)">One document, written by the person who is accountable for it.</h2>
+      <p style="margin-top:20px">
+        A consultancy will give you four reports from four firms and leave the reconciling to
+        you. The contradictions between them are the part that matters, and they are exactly
+        the part nobody owns.
+      </p>
+      <p>
+        We hire the specialists &mdash; surveyor, civil engineer, forester, land-use attorney,
+        cost consultant, board-certified safety professional &mdash; and then do the work of
+        turning what they produce into a single position with a recommendation on the front
+        of it. If two experts disagree, that disagreement is named and resolved in the
+        document rather than left for you to notice.
+      </p>
+      <p style="color:var(--fg-faint);font-size:14.5px">
+        Discretion is assumed. Some of this work is about people, and some clients would
+        rather not be a reference. Nothing is published or named without written consent.
+      </p>
+    </div>
+    <div>
+      <p class="eyebrow dim">What is in it</p>
+      <ul class="plist">
+        <li><span class="num">01</span><span class="tx"><b>The recommendation, first.</b> One page. If you read nothing else you know what we think and why.</span></li>
+        <li><span class="num">02</span><span class="tx"><b>What we found.</b> The facts, sourced, with the specialists who produced them named.</span></li>
+        <li><span class="num">03</span><span class="tx"><b>What it costs.</b> A model you can interrogate, not a single number.</span></li>
+        <li><span class="num">04</span><span class="tx"><b>What could go wrong.</b> Ranked, priced, each with a mitigation and an owner.</span></li>
+        <li><span class="num">05</span><span class="tx"><b>What we do not know.</b> The open questions and what it would cost to close them.</span></li>
+        <li><span class="num">06</span><span class="tx"><b>What to do next.</b> In order, with who does it.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band tint" id="engage">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Engagement</p>
+      <h2 style="font-size:clamp(26px,3.3vw,37px)">Independent of the company that builds &mdash; and we will say so in writing.</h2>
+      <p style="margin-top:20px">
+        Strongpoint Build is our sister company and an Oregon CCB-licensed general
+        contractor. We are deliberately not the same entity, because advising an owner on
+        whether to build is not a job for the people who would be paid to build it.
+      </p>
+      <p>
+        Where a project would touch both, you are told before you engage and you decide. If
+        the honest answer is that you need an independent party we have no relationship with,
+        that is the answer you will get.
+      </p>
+      <div class="bill">
+        <div><b>Retainer</b><span>A monthly fee scoped to the engagement, for work that runs
+          alongside a live decision &mdash; standing advisory through an entitlement process,
+          a capital programme, or a negotiation.</span></div>
+        <div><b>Project-based</b><span>A fixed fee per deliverable: a feasibility report, a
+          capital plan, a diligence file, a white paper. You buy the answer, not the hours
+          spent reaching it.</span></div>
+        <div><b>Contracted through the firm</b><span>Engagement, payment and specialist
+          recruitment run through
+          <a href="https://strongpointops.com">The Strongpoint Firm</a>, so you hold one
+          agreement however many experts the question takes.</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow dim">The group</p>
+      <ul class="orgs">
+        <li><b>The Strongpoint Firm</b>
+          <em>The parent. Contracts, payment processing, recruitment and partner vetting.</em>
+          <a href="https://strongpointops.com">strongpointops.com &#8599;</a></li>
+        <li><b>Strongpoint Build</b>
+          <em>Sister company. Oregon CCB-licensed general contractor — construction and project management once a project is real.</em>
+          <a href="https://build.strongpointops.com/">build.strongpointops.com &#8599;</a></li>
+        <li><b>Principal</b>
+          <em>The founder's portfolio — background, track record and the standards the teams are held to.</em>
+          <a href="https://principal.strongpointops.com/">principal.strongpointops.com &#8599;</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="notes">
+  <div class="wrap news">
+    <div>
+      <p class="eyebrow">Market notes</p>
+      <h2 style="font-size:clamp(26px,3.2vw,36px)">What the ground is doing, roughly monthly.</h2>
+      <p style="margin-top:16px;color:var(--fg-dim)">
+        Construction cost and trade availability in the Pacific Northwest, rural land and
+        farmland, timber, lending conditions, and the Oregon land-use and permitting changes
+        that quietly move a pro forma.
+      </p>
+      <p style="color:var(--fg-faint);font-size:14px">
+        The four questions below are not marketing &mdash; they decide whether we call you or
+        just send the newsletter. Either outcome is fine, which is why it is worth answering
+        them straight.
+      </p>
+      <form id="subForm">
+        <div class="nf"><label for="n-email">Email</label>
+          <input id="n-email" name="email" type="email" required placeholder="you@company.com"></div>
+        <div class="qual">
+          <div class="nf"><label for="n-role">Your seat</label>
+            <select id="n-role" name="role">
+              <option>Owner or principal</option><option>Executive or board</option>
+              <option>Investor or lender</option><option>Developer or operator</option>
+              <option>Architect, engineer or consultant</option><option>Just interested</option>
+            </select></div>
+          <div class="nf"><label for="n-scope">What's in front of you</label>
+            <select id="n-scope" name="scope">
+              <option>Nothing specific &mdash; reading</option>
+              <option>Weighing a purchase or investment</option>
+              <option>A build or expansion</option>
+              <option>Entitlement or re-zoning</option>
+              <option>A capital programme</option>
+              <option>A project that is going wrong</option>
+            </select></div>
+          <div class="nf"><label for="n-scale">Scale</label>
+            <select id="n-scale" name="scale">
+              <option>Not applicable</option><option>Under $250k</option>
+              <option>$250k &ndash; $1M</option><option>$1M &ndash; $2.5M</option>
+              <option>$2.5M &ndash; $10M</option><option>Over $10M</option>
+            </select></div>
+          <div class="nf"><label for="n-when">Timing</label>
+            <select id="n-when" name="when">
+              <option>No timeline</option><option>This quarter</option>
+              <option>Within six months</option><option>Within a year</option>
+              <option>Already under way</option>
+            </select></div>
+        </div>
+        <button class="btn" type="submit">Subscribe</button>
+        <p style="font-size:13px;color:var(--fg-faint);margin-top:12px">
+          One email a month at most. Not shared, not sold, unsubscribe in one click.</p>
+      </form>
+      <div class="said" id="subMsg">
+        <b>Noted.</b> You'll get the next issue.
+        <span class="tk">[not wired to a list backend yet]</span>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow dim">Recent issues</p>
+      <ul class="issues">
+        <li><b>Douglas-fir stumpage, and why your harvest window moved</b>
+          <em>Export demand, mill capacity, and the cost of waiting a season.</em></li>
+        <li><b>The real cost of a rural water right in 2026</b>
+          <em>What buyers keep discovering after closing, and what to pull beforehand.</em></li>
+        <li><b>Shop, shed or ground-up: pricing a 12,000 sq ft expansion</b>
+          <em>Three delivery routes costed against the same programme.</em></li>
+      </ul>
+      <p style="color:var(--fg-faint);font-size:13.5px;margin-top:16px">
+        Back issues in full on
+        <a href="https://principal.strongpointops.com/notes.html" style="color:var(--family)">Principal &#8599;</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <p class="eyebrow">Next step</p>
+    <h2>Tell us the decision you are weighing.</h2>
+    <p>First conversation is thirty minutes and costs nothing. If the honest answer is that
+       you do not need us yet, that is what you will hear.</p>
+    <div class="row">
+      <a class="btn" href="contact.html">Start a conversation</a>
+      <a class="btn ghost" href="#practice">What we cover</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html">Practice</a>
+    <a href="index.html#engage">Engagement</a>
+    <a href="contact.html">Contact</a>
+    <span class="sp">
+      Strongpoint Advisory, a company of
+      <a href="https://strongpointops.com">The Strongpoint Firm</a>. Independent of
+      <a href="https://build.strongpointops.com/">Strongpoint Build</a> on any scope where
+      both would be engaged. &copy; 2026.
+    </span>
+  </div>
+</footer>
+
+<script>
+/* No list backend yet — carry the qualifying answers into the mail body rather
+   than dropping them silently, and say plainly that nothing is stored. */
+document.getElementById('subForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=this, g=function(n){return (f.elements[n]&&f.elements[n].value||'').trim();};
+  var body=['Email: '+g('email'),'Seat: '+g('role'),'In front of them: '+g('scope'),
+            'Scale: '+g('scale'),'Timing: '+g('when')].join('\n');
+  f.style.display='none';
+  document.getElementById('subMsg').style.display='block';
+  /* [EMAIL] — replace before launch. */
+  window.location.href='mailto:?subject='+encodeURIComponent('Market Notes signup')+
+    '&body='+encodeURIComponent(body);
+});
+var mb=document.getElementById('menuBtn'), nv=document.getElementById('nav');
+mb.addEventListener('click',function(){
+  var open=nv.classList.toggle('open');
+  mb.setAttribute('aria-expanded',String(open));
+});
+</script>
+</body>
+</html>

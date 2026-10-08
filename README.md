@@ -1,6 +1,6 @@
 # Strongpoint Advisory
 
-**Target: https://advisors.strongpointops.com** — *no DNS record yet; the
+**Target: https://consult.strongpointops.com** — *no DNS record yet; the
 custom domain is not attached, so siblings route Advisory references to the
 firm page instead of reinstating a dead link.*
 

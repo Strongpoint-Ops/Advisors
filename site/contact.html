@@ -17,7 +17,7 @@
 <style>
 /* Strongpoint Advisory — see the Brand Playbook. Fifth property in the group:
    its own ground and accent, the shared skeleton. Accent #7fa968 clears all
-   three colour gates — 6.92:1 on this ground, 65 degrees minimum hue
+   three color gates — 6.92:1 on this ground, 65 degrees minimum hue
    separation from parent, principal, build and dashboard. */
 :root{
   --ink:#0e1316; --panel:#161c20; --panel-2:#1d2529;
@@ -307,7 +307,7 @@ document.getElementById('intake').addEventListener('submit',function(e){
     'Need: '+g('need'),'Stage: '+g('stage'),'Scale: '+g('scale'),'',g('msg')].join('\n');
   document.getElementById('sent').style.display='block';
   /* Goes to info@strongpointops.com. */
-  window.location.href='mailto:info@strongpointops.com?subject='+encodeURIComponent('Advisory enquiry — '+g('name'))+
+  window.location.href='mailto:info@strongpointops.com?subject='+encodeURIComponent('Advisory inquiry — '+g('name'))+
     '&body='+encodeURIComponent(body);
 });
 var mb=document.getElementById('menuBtn'), nv=document.getElementById('nav');

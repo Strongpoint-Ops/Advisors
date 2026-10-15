@@ -58,7 +58,7 @@ The accent clears all three gates from the Brand Playbook, measured:
 - **6.92:1** against its own ground (needs ≥ 4.5:1)
 - **65°** minimum hue separation from every sibling accent — parent 210°,
   principal 34°, build 23°, dashboard 186°; this is hue 99° (needs ≥ 60°)
-- not the family colour `#6f8fa8`, which is reserved for links that leave the
+- not the family color `#6f8fa8`, which is reserved for links that leave the
   property
 
 ## Placeholders
